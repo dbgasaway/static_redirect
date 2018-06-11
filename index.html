@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<noscript>
+  This app requires Javascript to be enabled.
+</noscript>
+
+<div id="link-box">
+  <div id="no-link">No link?</div>
+  <div style="display: none;" id="link">
+    <a id="linka">Link</a>
+  </div>
+</div>
+
+<script>
+let params = (new URL(document.location)).searchParams;
+let link = params.get("l");
+if (link) {
+  document.getElementById("link").style.display = "block";
+  document.getElementById("no-link").style.display = "none";
+  document.getElementById("linka").href = link;
+  window.location.href = link;
+}
+</script>
+
+</body>
+</html>
